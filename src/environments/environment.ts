@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_URL: `https://spadiscgolf-default-rtdb.firebaseio.com/`,
+  API_KEY: 'AIzaSyDy0Rlb_5TLqLjNbKa6gSDftsmanOWcwTo'
 };
 
 /*
