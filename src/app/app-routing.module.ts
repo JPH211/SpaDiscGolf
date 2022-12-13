@@ -9,10 +9,10 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch:'full'},
   { path: 'home', component: HomeComponent },
+  { path: 'courses/create', component: CreateCourseComponent},
   { path: 'courses/:id/edit', component: EditCourseComponent},
   { path: 'courses/:id', component: CourseDetailsComponent},
   { path: 'courses', component: CoursesComponent},
-  { path: 'create-course', component: CreateCourseComponent},
 
 ];
 

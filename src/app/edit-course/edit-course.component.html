@@ -12,20 +12,10 @@
       <h1>Holes</h1>
       <div *ngFor="let hole of holesArray.controls; let i = index">
         <div [formGroup]="hole">
-          Hole {{i+1}}
-          <label>Par</label
-          ><input
-            type="number"
-            placeholder="1"
-            formControlName="par"
-
-          />
+          Hole {{ i + 1 }} <label>Par</label
+          ><input type="number" placeholder="1" formControlName="par" />
           <label>Yards</label
-          ><input
-            type="number"
-            placeholder="10"
-            formControlName="yards"
-          />
+          ><input type="number" placeholder="10" formControlName="yards" />
           <button class="btn btn-danger" (click)="onDeleteHole(i)">X</button>
         </div>
       </div>
@@ -35,7 +25,14 @@
       </button>
       <br />
       <br />
-      <button class="btn btn-success" (click)="onSubmit()" [disabled]="form.invalid">Save Course</button>
+      <button
+        class="btn btn-success"
+        (click)="onSubmit()"
+        [disabled]="form.invalid"
+      >
+        Save Course
+      </button>
+      <button class="btn btn-danger" routerLink="../">Discard Edits</button>
     </form>
   </div>
 </div>

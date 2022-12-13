@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: lightgray;
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 50px; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 /* unvisited link */
@@ -28,4 +28,7 @@ a:active {
   text-align: right;
 }
 
+.btn {
+  margin-left: .5rem;
+}
 

@@ -74,7 +74,7 @@ export class EditCourseComponent implements OnInit {
 
   onSubmit() {
     this.courseService.updateCourse(this.id, this.form.value).subscribe(() => {
-      this.router.navigate(['./home']);
+      this.router.navigate(['/courses', this.id]);
     });
   }
 

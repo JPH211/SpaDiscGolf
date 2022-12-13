@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md"><h2>Course Name</h2></div>
     <div class="col-md text-center"><h2>Number of Holes</h2></div>
-    <div class="col-md text-right"><h2>Delete Course</h2></div>
+    <div class="col-md text-right"><h2>Actions</h2></div>
     <hr />
   </div>
   <div class="row" *ngFor="let course of courses; let i = index">
@@ -13,8 +13,11 @@
       {{ course.holes.length }}
     </div>
     <div class="col-md text-right">
+      <button class="btn btn-warning" [routerLink]="['/courses', course.id, 'edit']">
+        Edit
+      </button>
       <button class="btn btn-danger" (click)="onDeleteCourse(course.id)">
-        X
+        Delete
       </button>
     </div>
     <hr />

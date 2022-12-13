@@ -1,8 +1,25 @@
-Course name: {{ course?.name }}
-<!-- {{ course?.id }} -->
-<div *ngFor="let hole of course?.holes; let i = index">
-  Hole {{i+1}}: Par {{hole.par}} Yards: {{ hole.yards }}
+<h2 class="text-center">{{ course?.name }}</h2>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center"><h2>Hole</h2></div>
+    <div class="col-sm text-center"><h2>Par</h2></div>
+    <div class="col-sm text-center"><h2>Hole Length</h2></div>
+    <hr />
+  </div>
 
-
+  <div class="row" *ngFor="let hole of course?.holes; let i = index">
+    <div class="col-lg text-center">
+      {{ i + 1 }}
+    </div>
+    <div class="col-lg text-center">
+      {{ hole.par }}
+    </div>
+    <div class="col-lg text-center">{{ hole.yards }} Yards</div>
+    <hr />
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" routerLink="edit">Edit</button>
+    <button class="btn btn-danger" (click)="onDeleteCourse()">Delete!</button>
+  </div>
 </div>
-<button class="btn btn-primary" routerLink="edit">Edit</button>
