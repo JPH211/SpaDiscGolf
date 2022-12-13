@@ -1,12 +1,24 @@
-export class Course
-{
-  courseName: string;
-  courseHoleNum: number;
+import { User } from './user.model';
 
-  constructor(name: string, numberHoles: number) {
-    this.courseName=name;
-    this.courseHoleNum=numberHoles;
+export class Course {
+  id?: string;
+  name: string;
+  holes: Hole[];
 
+  constructor(name: string, holes: Hole[], id?: string) {
+    this.name = name;
+    this.holes = holes;
+    this.id = id;
+    //
   }
+}
 
+export class Hole {
+  par: number;
+  yards: number;
+
+  constructor(par: number, yards: number) {
+    this.par = par;
+    this.yards = yards;
+  }
 }

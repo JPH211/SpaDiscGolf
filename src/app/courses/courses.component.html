@@ -1,1 +1,13 @@
-<div class="container"><div class="row-wd-6"></div></div>
+<div class="container">
+  <div class="row-wd-6" *ngFor="let course of courses">
+    <div class="col-cw-12">
+      <a [routerLink]="['/courses', course.id]"
+        >Course Name: {{ course.name }}</a
+      ><br>
+      Number of Holes: {{ course.holes.length }}
+      <br />
+    </div>
+    <br />
+  </div>
+</div>
+<!-- <button class="btn btn-primary" (click)="initializeData()">Save courses!</button> -->

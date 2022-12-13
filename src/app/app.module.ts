@@ -8,15 +8,15 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
-import { FeedComponent } from './feed/feed.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     CoursesComponent,
-    FeedComponent,
     HomeComponent,
+    CourseDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../models/course.model';
-import { FeedService } from '../shared/feed.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +7,9 @@ import { FeedService } from '../shared/feed.service';
 })
 export class HomeComponent implements OnInit {
 
-  courses: Course[] = [];
 
-  constructor(private feedService: FeedService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
   }

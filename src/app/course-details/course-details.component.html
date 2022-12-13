@@ -1,0 +1,5 @@
+Course name: {{ course?.name }}
+<!-- {{ course?.id }} -->
+<div *ngFor="let hole of course?.holes; let i = index">
+  Hole {{i+1}}: Par {{hole.par}} Yards: {{ hole.yards }}
+</div>
