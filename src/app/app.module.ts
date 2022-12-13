@@ -6,11 +6,17 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
+import { CoursesComponent } from './courses/courses.component';
+import { HomeComponent } from './home/home.component';
+import { FeedComponent } from './feed/feed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
+    CoursesComponent,
+    FeedComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
