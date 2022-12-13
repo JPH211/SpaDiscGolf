@@ -1,0 +1,42 @@
+<p>create-course works!</p>
+<div class="container">
+  <div class="form-group row-rw-12">
+    <form [formGroup]="form">
+      <h1>Course name</h1>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter course name here"
+        formControlName="name"
+      />
+      <br />
+      <h1>Holes</h1>
+      <div *ngFor="let hole of holesArray.controls; let i = index">
+        <div [formGroup]="hole">
+          Hole {{i+1}}
+          <label>Par</label
+          ><input
+            type="number"
+            placeholder="1"
+            formControlName="par"
+
+          />
+          <label>Yards</label
+          ><input
+            type="number"
+            placeholder="10"
+            formControlName="yards"
+          />
+          <button class="btn btn-danger" (click)="onDeleteHole(i)">X</button>
+        </div>
+      </div>
+      <br />
+      <button class="btn btn-warning" (click)="onAddNewHole()">
+        Add Another Hole
+      </button>
+      <br />
+      <br />
+      <button class="btn btn-success" (click)="onSubmit()" [disabled]="form.invalid">Save Course</button>
+    </form>
+  </div>
+</div>
