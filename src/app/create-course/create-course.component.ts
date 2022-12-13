@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { CoursesService } from '../shared/courses.service';
 
@@ -11,7 +12,7 @@ import { CoursesService } from '../shared/courses.service';
 export class CreateCourseComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private courseService: CoursesService) {
+  constructor(private courseService: CoursesService, private router: Router) {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       holes: new FormArray([], [Validators.required ,Validators.minLength(environment.minHoles)] ),
@@ -34,6 +35,7 @@ export class CreateCourseComponent implements OnInit {
 
   onSubmit() {
     this.courseService.createAndStoreCourse(this.form.value).subscribe();
+    this.router.navigate(['./home']);
   }
 
   get holesArray() {

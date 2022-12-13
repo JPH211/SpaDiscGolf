@@ -1,14 +1,14 @@
 import { User } from './user.model';
 
 export class Course {
-  id?: string;
+  id: string;
   name: string;
   holes: Hole[];
 
   constructor(name: string, holes: Hole[], id?: string) {
     this.name = name;
     this.holes = holes;
-    this.id = id;
+    this.id = id ? id : '';
     //
   }
 }

@@ -8,7 +8,7 @@ import { CoursesService } from '../shared/courses.service';
   styleUrls: ['./courses.component.css'],
 })
 export class CoursesComponent implements OnInit {
-  courses: Course[] = [
+  courses?: Course[] = [
   // new Course('Dalhouse', [
   //   new Hole(3, 120),
   //   new Hole(2, 90),
@@ -30,8 +30,17 @@ export class CoursesComponent implements OnInit {
     );
   }
 
-  initializeData(){
-    this.coursesService.createAndStoreCourse(this.courses[0]).subscribe();
-    this.coursesService.createAndStoreCourse(this.courses[1]).subscribe();
+  onDeleteCourse(id: string){
+    this.coursesService.deleteCourse(id).subscribe(
+      (res) => {
+        this.courses = res;
+      }
+    );
+
   }
+
+  // initializeData(){
+  //   this.coursesService.createAndStoreCourse(this.courses[0]).subscribe();
+  //   this.coursesService.createAndStoreCourse(this.courses[1]).subscribe();
+  // }
 }

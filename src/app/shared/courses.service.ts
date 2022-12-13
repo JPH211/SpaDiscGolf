@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { Course } from '../models/course.model';
 
 @Injectable({
@@ -33,7 +33,13 @@ export class CoursesService {
       );
   }
 
-  deleteCourse() {}
+  deleteCourse(id: string) {
+    return this.http
+      .delete(
+        `https://spadiscgolf-default-rtdb.firebaseio.com/courses/${id}.json`
+      )
+      .pipe(switchMap(()=>this.getAllCourses()));
+  }
 
   getCourse(id: string): Observable<Course> {
     return this.http

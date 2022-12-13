@@ -1,6 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: gray;
+  background-color: lightgray;
   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: darkblue;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}
+
+.text-right{
+  text-align: right;
+}
+
 
