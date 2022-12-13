@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   API_URL: `https://spadiscgolf-default-rtdb.firebaseio.com/`,
-  API_KEY: 'AIzaSyDy0Rlb_5TLqLjNbKa6gSDftsmanOWcwTo'
+  API_KEY: 'AIzaSyDy0Rlb_5TLqLjNbKa6gSDftsmanOWcwTo',
+  minHoles: 1
 };
 
 /*
