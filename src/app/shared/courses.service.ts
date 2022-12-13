@@ -52,4 +52,10 @@ export class CoursesService {
         })
       );
   }
+
+  updateCourse(id: string, course: Course){
+    return this.http.put<Course>(
+      `https://spadiscgolf-default-rtdb.firebaseio.com/courses/${id}.json`, course
+    );
+  }
 }

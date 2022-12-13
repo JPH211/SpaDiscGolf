@@ -10,6 +10,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
     HomeComponent,
     CourseDetailsComponent,
     CreateCourseComponent,
+    EditCourseComponent,
   ],
   imports: [
     BrowserModule,

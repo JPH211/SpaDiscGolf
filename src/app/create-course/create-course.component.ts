@@ -15,7 +15,10 @@ export class CreateCourseComponent implements OnInit {
   constructor(private courseService: CoursesService, private router: Router) {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
-      holes: new FormArray([], [Validators.required ,Validators.minLength(environment.minHoles)] ),
+      holes: new FormArray(
+        [],
+        [Validators.required, Validators.minLength(environment.minHoles)]
+      ),
     });
   }
 
@@ -34,8 +37,9 @@ export class CreateCourseComponent implements OnInit {
   }
 
   onSubmit() {
-    this.courseService.createAndStoreCourse(this.form.value).subscribe();
-    this.router.navigate(['./home']);
+    this.courseService.createAndStoreCourse(this.form.value).subscribe(() => {
+      this.router.navigate(['./home']);
+    });
   }
 
   get holesArray() {
