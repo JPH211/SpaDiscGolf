@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import { CoursesService } from '../shared/courses.service';
 
 @Component({
@@ -12,8 +13,8 @@ export class CreateCourseComponent implements OnInit {
 
   constructor(private courseService: CoursesService) {
     this.form = new FormGroup({
-      name: new FormControl(),
-      holes: new FormArray([], [Validators.required, Validators.minLength(1)] ),
+      name: new FormControl(null, [Validators.required]),
+      holes: new FormArray([], [Validators.required ,Validators.minLength(environment.minHoles)] ),
     });
   }
 
