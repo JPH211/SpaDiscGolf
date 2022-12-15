@@ -14,6 +14,7 @@ import { CoursesService } from '../shared/courses.service';
 export class EditCourseComponent implements OnInit {
   form: FormGroup;
   id: string = '';
+  name?: string;
 
   constructor(
     private courseService: CoursesService,
@@ -51,13 +52,14 @@ export class EditCourseComponent implements OnInit {
               Validators.required,
             ]),
             yards: new FormControl(hole.yards, [
-              Validators.min(10),
+              Validators.min(environment.minYards),
               Validators.required,
             ]),
           });
           this.holesArray.push(newHole);
         }
         this.id = course.id;
+        this.name = course.name;
       });
   }
   onAddNewHole() {
@@ -74,7 +76,8 @@ export class EditCourseComponent implements OnInit {
 
   onSubmit() {
     this.courseService.updateCourse(this.id, this.form.value).subscribe(() => {
-      this.router.navigate(['/courses', this.id]);
+      // this.router.navigate(['/courses', this.id]);
+      this.router.navigate(['/home']);
     });
   }
 

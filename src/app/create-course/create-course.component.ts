@@ -14,7 +14,7 @@ export class CreateCourseComponent implements OnInit {
 
   constructor(private courseService: CoursesService, private router: Router) {
     this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required, Validators.maxLength(30)]),
       holes: new FormArray(
         [],
         [Validators.required, Validators.minLength(environment.minHoles)]

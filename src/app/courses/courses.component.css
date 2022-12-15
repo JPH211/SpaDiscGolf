@@ -1,0 +1,16 @@
+#cap
+{
+  text-transform: capitalize;
+}
+
+.vertical-center{
+  margin-bottom: 15px;
+}
+
+.custom-margin{
+  margin-top: 10px;
+}
+
+a{
+  text-decoration: none;
+}

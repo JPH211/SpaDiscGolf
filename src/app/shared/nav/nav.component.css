@@ -1,0 +1,9 @@
+.child{
+  transition: .3s;
+}
+
+.child:hover{
+  cursor: pointer;
+  text-size-adjust: 1.1;
+  opacity: .6;
+}

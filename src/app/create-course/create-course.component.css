@@ -1,0 +1,12 @@
+h1{
+  text-transform: capitalize;
+}
+input.course{
+  text-align: center;
+  display: inline-block;
+}
+input.par-yards{
+  text-align: center;
+  width: 40%;
+  display: inline-block
+}

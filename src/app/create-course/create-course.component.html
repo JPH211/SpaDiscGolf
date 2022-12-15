@@ -1,41 +1,40 @@
 <div class="container">
-  <div class="form-group row-rw-12">
+  <div class="form-group row-rw-6 ">
     <form [formGroup]="form">
-      <h1>Course name</h1>
+      <h1 class="text-md-center">Thanks for Adding a Course!</h1>
+      <br />
       <input
         type="text"
-        class="form-control"
-        placeholder="Enter course name here"
+        class="form-control course"
+        placeholder="Enter Course Name, Each Course must have 9 or more holes!"
         formControlName="name"
       />
-      <br />
-      <h1>Holes</h1> 
-      <div *ngFor="let hole of holesArray.controls; let i = index">
+      <br /><hr>
+      <div *ngFor="let hole of holesArray.controls; let i = index" class="text-md-center">
         <div [formGroup]="hole">
-          Hole {{i+1}}
-          <label>Par</label
-          ><input
-            type="number"
-            placeholder="1"
-            formControlName="par"
-
-          />
-          <label>Yards</label
-          ><input
-            type="number"
-            placeholder="10"
-            formControlName="yards"
-          />
+          Hole {{ i + 1 }}
+          <label>Par:</label>
+          <input class="par-yards"type="number" placeholder="Must be par 1 or more" formControlName="par" />
+          <label>Yards:</label
+          ><input class="par-yards"type="number" placeholder="Must be at least 10 yards" formControlName="yards" />
           <button class="btn btn-danger" (click)="onDeleteHole(i)">X</button>
         </div>
       </div>
       <br />
-      <button class="btn btn-warning" (click)="onAddNewHole()">
-        Add Another Hole
-      </button>
-      <br />
-      <br />
-      <button class="btn btn-success" (click)="onSubmit()" [disabled]="form.invalid">Save Course</button>
+      <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <button class="btn btn-warning" (click)="onAddNewHole()">
+          Add a Hole
+        </button>
+        <br />
+        <br />
+        <button
+          class="btn btn-success"
+          (click)="onSubmit()"
+          [disabled]="form.invalid"
+        >
+          Save Course
+        </button>
+      </div>
     </form>
   </div>
 </div>

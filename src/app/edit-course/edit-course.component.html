@@ -1,38 +1,83 @@
 <div class="container">
-  <div class="form-group row-rw-12">
+  <div class="form-group row-rw-2">
     <form [formGroup]="form">
-      <h1>Course name</h1>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Enter course name here"
-        formControlName="name"
-      />
+      <div class="container text-md-center">
+        <h2 class="text-center">Editing {{ name }}!</h2>
+        <!-- <input
+          type="text"
+          class="form-control"
+          placeholder="Enter course name here"
+          formControlName="name"
+        /> -->
+        <br />
+        <hr />
+        <br />
+      </div>
+      <div
+        class="container flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      >
+        <!-- <ul class="nav"></ul> -->
+        <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        >
+          <li class="me-4">
+            <button
+              class="btn btn-warning"
+              id="lrg-btn"
+              (click)="onAddNewHole()"
+            >
+              Add Hole
+            </button>
+          </li>
+          <li class="me-4">
+            <button
+              class="btn btn-success"
+              id="lrg-btn"
+              (click)="onSubmit()"
+              [disabled]="form.invalid"
+            >
+              Save Edits
+            </button>
+          </li>
+          <li class="me-4">
+            <button
+              class="btn btn-danger margin-right"
+              id="lrg-btn"
+              routerLink="../"
+            >
+              Discard Edits
+            </button>
+          </li>
+        </ul>
+      </div>
       <br />
-      <h1>Holes</h1>
-      <div *ngFor="let hole of holesArray.controls; let i = index">
+      <hr />
+      <div
+        *ngFor="let hole of holesArray.controls; let i = index"
+        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <div [formGroup]="hole">
-          Hole {{ i + 1 }} <label>Par</label
-          ><input type="number" placeholder="1" formControlName="par" />
-          <label>Yards</label
-          ><input type="number" placeholder="10" formControlName="yards" />
-          <button class="btn btn-danger" (click)="onDeleteHole(i)">X</button>
+          Hole {{ i + 1 }}:
+          <label>Par</label>
+          <input
+            class="form-input"
+            type="number"
+            placeholder="1"
+            formControlName="par"
+          />
+          <label>Yards</label>
+          <input
+            class="form-input"
+            type="number"
+            placeholder="10 yards"
+            formControlName="yards"
+          />
+          <button class="btn btn-danger" (click)="onDeleteHole(i)">
+            Delete Hole {{ i + 1 }}
+          </button>
+          <br /><br />
         </div>
       </div>
       <br />
-      <button class="btn btn-warning" (click)="onAddNewHole()">
-        Add Another Hole
-      </button>
-      <br />
-      <br />
-      <button
-        class="btn btn-success"
-        (click)="onSubmit()"
-        [disabled]="form.invalid"
-      >
-        Save Course
-      </button>
-      <button class="btn btn-danger" routerLink="../">Discard Edits</button>
     </form>
   </div>
 </div>

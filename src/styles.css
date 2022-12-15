@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: lightgray;
-  margin: 50px; font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 200px;
+  margin-top: 50px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
 }
 
+a{
+  transition: .3s;
+}
 /* unvisited link */
 a:link {
   color: black;
@@ -16,7 +22,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: darkblue;
+  opacity: .6;
 }
 
 /* selected link */
@@ -28,7 +34,16 @@ a:active {
   text-align: right;
 }
 
+.text-left{
+  text-align: left;
+}
+
 .btn {
   margin-left: .5rem;
+}
+
+.very-large-text {
+  text-transform: capitalize;
+  -webkit-text-size-adjust: 100%;
 }
 
